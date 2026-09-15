@@ -1,0 +1,13 @@
+.current-user {
+  &,
+  .user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    .avatar {
+      border-radius: 12px;
+    }
+  }
+}

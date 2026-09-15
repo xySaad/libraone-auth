@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=login,visibility,visibility_off");
+@import url("./login.css");
+@import url("./home.css");
+
+* {
+  color: white !important;
+}
+
+html,
+body {
+  background: black;
+  margin: 0;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    border: none;
+    outline: none;
+    background: none;
+  }
+  .input {
+    width: 100%;
+    padding: 15px 20px;
+    background: rgb(31, 21, 21);
+    border-radius: 8px;
+  }
+
+  button {
+    background: none;
+    border: none;
+  }
+  .button {
+    cursor: pointer;
+    display: flex;
+  }
+
+  .login-button {
+    background: rgb(3, 3, 100);
+    border-radius: 8px;
+    padding: 15px 20px;
+    display: flex;
+    gap: 10px;
+  }
+}
