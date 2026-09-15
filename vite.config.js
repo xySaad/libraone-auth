@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/libraone-auth/",
+  base: "/",
   server: {
     port: 5052,
     allowedHosts: true,
