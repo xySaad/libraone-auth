@@ -1,4 +1,9 @@
-export async function fetchGraphQL(query, variables = {}, endpoint, jwt) {
+export async function fetchGraphQL<T = unknown>(
+  query: string,
+  variables: Record<string, unknown> = {},
+  endpoint: string,
+  jwt: string,
+): Promise<T> {
   const response = await fetch(endpoint, {
     method: "POST",
     headers: {
@@ -18,5 +23,5 @@ export async function fetchGraphQL(query, variables = {}, endpoint, jwt) {
     throw new Error(`GraphQL Error: ${JSON.stringify(result.errors)}`);
   }
 
-  return result.data;
+  return result.data as T;
 }
