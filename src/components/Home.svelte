@@ -8,7 +8,10 @@
 
   let token = $state<string | null>(localStorage.getItem("token"));
 
-  function getUserById(userId: number, jwt: string): Promise<GetUserByIdResult> {
+  function getUserById(
+    userId: number,
+    jwt: string,
+  ): Promise<GetUserByIdResult> {
     return fetchGraphQL<GetUserByIdResult>(
       queries.GET_USER_BY_ID,
       { userId },
@@ -18,11 +21,13 @@
   }
 
   function parseUserId(jwt: string): number {
-    return JSON.parse(atob(jwt.split(".")[1])).sub as number;
+    return JSON.parse(atob(jwt.split(".")[1])).sub;
   }
 
   let userPromise = $derived(
-    token ? getUserById(parseUserId(token), token) : Promise.reject(new Error("No token")),
+    token
+      ? getUserById(parseUserId(token), token)
+      : Promise.reject(new Error("No token")),
   );
 </script>
 

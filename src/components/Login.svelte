@@ -27,7 +27,7 @@
       return;
     }
 
-    const token = (await resp.json()) as string;
+    const token = await resp.json();
     localStorage.setItem("token", token);
     onlogin(token);
   };
